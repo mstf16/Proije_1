@@ -1,13 +1,6 @@
-
-
-
 import java.util.Scanner;
 
-
-
 public class Main {
-
-
 
     public static void anamenü() {
         System.out.println("**********************");
@@ -19,21 +12,19 @@ public class Main {
         System.out.println("OPTİON E Terminate");
         System.out.println("**********************");
     }
-
     public static void main(String[] args) {
-
-
         Scanner scanner = new Scanner(System.in);
 
-        String input ="";
-String subinput ="";
-        boolean isRunning = true ;
+        String input = "";
+        String subinput = "";
+        boolean isRunning = true;
 
         System.out.println("\u001B[35m JAVA");
         System.out.println("\u001B[34m İS");
         System.out.println("\u001B[36m SMART");
-        System.out.println("\u001B[31m PROGRAM MADEN BY GROUP 14 \n ALIDAMAT SAFARLI \n MAHMUT EGE SORHAN \n MUSTAFA CAN SANDALCI \n SERHAT DEMİR ");
-
+        System.out.println(
+                "\u001B[31m PROGRAM MADEN BY GROUP 14 \n ALIDAMAT SAFARLI \n MAHMUT EGE SORHAN \n MUSTAFA CAN SANDALCI \n SERHAT DEMİR "
+        );
 
         for (int i = 0; i < 5; i++) {
             System.out.println("Please wait for \n program to open");
@@ -44,129 +35,144 @@ String subinput ="";
             }
         }
 
+        System.out.println(
+                "\n \u001B[35m "
+                        + "                  $$$        $$$$$      $$$$         $$$$     $$$$$                                 \n"
+                        + "                  $$$       $$$$$$$     $$$$         $$$$    $$$$$$$                                \n"
+                        + "                  $$$       $$$$$$$     $$$$$       $$$$$    $$$$$$$                                \n"
+                        + "                  $$$       $$$$$$$      $$$$       $$$$     $$$$$$$                                \n"
+                        + "                  $$$      $$$$ $$$$     $$$$$     $$$$$    $$$$ $$$$                               \n"
+                        + "                  $$$      $$$$ $$$$      $$$$     $$$$     $$$$ $$$$                               \n"
+                        + "                  $$$     $$$$$ $$$$$     $$$$     $$$$    $$$$$ $$$$$                              \n"
+                        + "                  $$$     $$$$   $$$$     $$$$$   $$$$$    $$$$   $$$$                              \n"
+                        + "                  $$$     $$$$   $$$$      $$$$   $$$$     $$$$   $$$$                              \n"
+                        + "                  $$$    $$$$$   $$$$$     $$$$$ $$$$$    $$$$$   $$$$$                             \n"
+                        + "                  $$$    $$$$$$$$$$$$$      $$$$ $$$$     $$$$$$$$$$$$$                             \n"
+                        + "          $$$$   $$$$    $$$$$$$$$$$$$      $$$$ $$$$     $$$$$$$$$$$$$                             \n"
+                        + "          $$$$   $$$$   $$$$$$$$$$$$$$$      $$$$$$$     $$$$$$$$$$$$$$$                            \n"
+                        + "          $$$$$ $$$$$   $$$$       $$$$      $$$$$$$     $$$$       $$$$                            \n"
+                        + "          $$$$$$$$$$$  $$$$$       $$$$$     $$$$$$$    $$$$$       $$$$$                           \n"
+                        + "           $$$$$$$$$   $$$$         $$$$      $$$$$     $$$$         $$$$                           \n"
+                        + "            $$$$$$$    $$$$         $$$$      $$$$$     $$$$         $$$$                           \n"
+        );
 
-        System.out.println("\n \u001B[35m "  +
-                "                  $$$        $$$$$      $$$$         $$$$     $$$$$                                 \n" +
-                "                  $$$       $$$$$$$     $$$$         $$$$    $$$$$$$                                \n" +
-                "                  $$$       $$$$$$$     $$$$$       $$$$$    $$$$$$$                                \n" +
-                "                  $$$       $$$$$$$      $$$$       $$$$     $$$$$$$                                \n" +
-                "                  $$$      $$$$ $$$$     $$$$$     $$$$$    $$$$ $$$$                               \n" +
-                "                  $$$      $$$$ $$$$      $$$$     $$$$     $$$$ $$$$                               \n" +
-                "                  $$$     $$$$$ $$$$$     $$$$     $$$$    $$$$$ $$$$$                              \n" +
-                "                  $$$     $$$$   $$$$     $$$$$   $$$$$    $$$$   $$$$                              \n" +
-                "                  $$$     $$$$   $$$$      $$$$   $$$$     $$$$   $$$$                              \n" +
-                "                  $$$    $$$$$   $$$$$     $$$$$ $$$$$    $$$$$   $$$$$                             \n" +
-                "                  $$$    $$$$$$$$$$$$$      $$$$ $$$$     $$$$$$$$$$$$$                             \n" +
-                "          $$$$   $$$$    $$$$$$$$$$$$$      $$$$ $$$$     $$$$$$$$$$$$$                             \n" +
-                "          $$$$   $$$$   $$$$$$$$$$$$$$$      $$$$$$$     $$$$$$$$$$$$$$$                            \n" +
-                "          $$$$$ $$$$$   $$$$       $$$$      $$$$$$$     $$$$       $$$$                            \n" +
-                "          $$$$$$$$$$$  $$$$$       $$$$$     $$$$$$$    $$$$$       $$$$$                           \n" +
-                "           $$$$$$$$$   $$$$         $$$$      $$$$$     $$$$         $$$$                           \n" +
-                "            $$$$$$$    $$$$         $$$$      $$$$$     $$$$         $$$$                           \n");
-
-anamenü();
-
-
-      while (isRunning) {
-
-
-          input = scanner.nextLine().toUpperCase();
-
-
-
-          switch (input) {
-
-              case "A":
-                  System.out.println("Sub-option J Age and Zodiac Sign Detection");
-
-                  System.out.println("Sub-option K Reverse the Words");
-
-                  System.out.println("For return to the main menu press X");
-                  subinput=scanner.nextLine().toUpperCase();
-switch (subinput) {
-    case "X":
-
-        for (int i = 0; i < 50; i++)
-            System.out.println("");
         anamenü();
-        break;
-}
 
+        while (isRunning) {
+            input = scanner.nextLine().trim().toUpperCase();
 
-    break;
-    case "B":
-        System.out.println("Sub-option F Prime Numbers");
+            switch (input) {
+                case "A":
+                    System.out.println("Sub-option J Age and Zodiac Sign Detection");
+                    System.out.println("Sub-option K Reverse the Words");
+                    System.out.println("For return to the main menu press X");
 
-        System.out.println("Sub-option G Step-by-step Evaluation of Expression");
-
-        System.out.println("For return to the main menu press X");
-        subinput = scanner.nextLine().toUpperCase();
-        switch (subinput) {
-            case "X":
-
-                for (int i = 0; i < 50; i++)
-                    System.out.println("");
-                anamenü();
-                break;
-
-
-            break;
-            case "C":
-                System.out.println("Sub-option H Statistical Information about an Array");
-
-                System.out.println("Sub-option I Distance between Two Arrays");
-
-                System.out.println("For return to the main menu press X");
-                subinput = scanner.nextLine().toUpperCase();
-                switch (subinput) {
-                    case "X":
-
-                        for (int i = 0; i < 50; i++)
-                            System.out.println("");
-                        anamenü();
-                        break;
-                }
-
-
+                    subinput = scanner.nextLine().trim().toUpperCase();
+                    switch (subinput) {
+                        case "J":
+                            System.out.println("Age and Zodiac Sign Detection - Not implemented yet");
+                            anamenü();
+                            break;
+                        case "K":
+                            System.out.println("Reverse the Words - Not implemented yet");
+                            anamenü();
+                            break;
+                        case "X":
+                            for (int i = 0; i < 50; i++) {
+                                System.out.println("");
+                            }
+                            anamenü();
+                            break;
+                        default:
+                            System.out.println("Please enter a valid sub-option");
+                            break;
+                    }
                     break;
 
-                    case "D":
-                        System.out.println("Connect Four Game");
+                case "B":
+                    System.out.println("Sub-option F Prime Numbers");
+                    System.out.println("Sub-option G Step-by-step Evaluation of Expression");
+                    System.out.println("For return to the main menu press X");
 
-                        System.out.println("For return to the main menu press X");
-
-                        switch (subinput) {
-                            case "X":
-                                subinput = scanner.nextLine().toUpperCase();
-                                for (int i = 0; i < 50; i++)
-                                    System.out.println("");
-                                anamenü();
-                                break;
-                        }
-
+                    subinput = scanner.nextLine().trim().toUpperCase();
+                    switch (subinput) {
+                        case "F":
+                            System.out.println("Prime Numbers - Not implemented yet");
+                            anamenü();
                             break;
+                        case "G":
+                            System.out.println("Step-by-step Evaluation of Expression - Not implemented yet");
+                            anamenü();
+                            break;
+                        case "X":
+                            for (int i = 0; i < 50; i++) {
+                                System.out.println("");
+                            }
+                            anamenü();
+                            break;
+                        default:
+                            System.out.println("Please enter a valid sub-option");
+                            break;
+                    }
+                    break;
 
-                            case "E":
-                                System.out.println("Exit");
-                                System.out.println("Thank you for using our program");
-                                isRunning = false;
+                case "C":
+                    System.out.println("Sub-option H Statistical Information about an Array");
+                    System.out.println("Sub-option I Distance between Two Arrays");
+                    System.out.println("For return to the main menu press X");
 
-                                break;
+                    subinput = scanner.nextLine().trim().toUpperCase();
+                    switch (subinput) {
+                        case "H":
+                            System.out.println("Statistical Information about an Array - Not implemented yet");
+                            anamenü();
+                            break;
+                        case "I":
+                            System.out.println("Distance between Two Arrays - Not implemented yet");
+                            anamenü();
+                            break;
+                        case "X":
+                            for (int i = 0; i < 50; i++) {
+                                System.out.println("");
+                            }
+                            anamenü();
+                            break;
+                        default:
+                            System.out.println("Please enter a valid sub-option");
+                            break;
+                    }
+                    break;
 
+                case "D":
+                    System.out.println("Connect Four Game");
+                    System.out.println("For return to the main menu press X");
 
-                            default:
-                                System.out.println("Please enter a valid option to continue");
+                    subinput = scanner.nextLine().trim().toUpperCase();
+                    switch (subinput) {
+                        case "X":
+                            for (int i = 0; i < 50; i++) {
+                                System.out.println("");
+                            }
+                            anamenü();
+                            break;
+                        default:
+                            System.out.println("Please enter a valid sub-option");
+                            break;
+                    }
+                    break;
 
-                                if (input.equals("A") || input.equals("B") || input.equals("C") || input.equals("D") || input.equals("E")) {
-                                }
-                                break;
-                        }
+                case "E":
+                    System.out.println("Exit");
+                    System.out.println("Thank you for using our program");
+                    isRunning = false;
+                    break;
 
-
-                }
+                default:
+                    System.out.println("Please enter a valid option to continue");
+                    break;
+            }
         }
-}
-          }
-      }
+
+        scanner.close();
     }
 }
