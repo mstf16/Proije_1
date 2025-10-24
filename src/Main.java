@@ -71,6 +71,8 @@ public class Main {
                     switch (subinput) {
                         case "J":
                             System.out.println("Age and Zodiac Sign Detection - Not implemented yet");
+                            Zodiac.Zodiac_Sign();
+
                             anamenü();
                             break;
                         case "K":
