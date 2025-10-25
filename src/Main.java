@@ -63,19 +63,19 @@ public class Main {
 
             switch (input) {
                 case "A":
-                    System.out.println("Sub-option J Age and Zodiac Sign Detection");
-                    System.out.println("Sub-option K Reverse the Words");
+                    System.out.println("Sub-option 1 Age and Zodiac Sign Detection");
+                    System.out.println("Sub-option 2 Reverse the Words");
                     System.out.println("For return to the main menu press X");
 
                     subinput = scanner.nextLine().trim().toUpperCase();
                     switch (subinput) {
-                        case "J":
+                        case "1":
                             System.out.println("Age and Zodiac Sign Detection - Not implemented yet");
                             Zodiac.Zodiac_Sign();
 
                             anamenü();
                             break;
-                        case "K":
+                        case "2":
                             System.out.println("Reverse the Words - Not implemented yet");
                             anamenü();
                             break;
@@ -92,17 +92,17 @@ public class Main {
                     break;
 
                 case "B":
-                    System.out.println("Sub-option F Prime Numbers");
-                    System.out.println("Sub-option G Step-by-step Evaluation of Expression");
+                    System.out.println("Sub-option 1 Prime Numbers");
+                    System.out.println("Sub-option 2 Step-by-step Evaluation of Expression");
                     System.out.println("For return to the main menu press X");
 
                     subinput = scanner.nextLine().trim().toUpperCase();
                     switch (subinput) {
-                        case "F":
+                        case "1":
                             System.out.println("Prime Numbers - Not implemented yet");
                             anamenü();
                             break;
-                        case "G":
+                        case "2":
                             System.out.println("Step-by-step Evaluation of Expression - Not implemented yet");
                             anamenü();
                             break;
@@ -119,8 +119,8 @@ public class Main {
                     break;
 
                 case "C":
-                    System.out.println("Sub-option H Statistical Information about an Array");
-                    System.out.println("Sub-option I Distance between Two Arrays");
+                    System.out.println("Sub-option 1 Statistical Information about an Array");
+                    System.out.println("Sub-option 2 Distance between Two Arrays");
                     System.out.println("For return to the main menu press X");
 
                     subinput = scanner.nextLine().trim().toUpperCase();

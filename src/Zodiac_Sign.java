@@ -10,14 +10,13 @@ import java.time.LocalDate;
 
 
              Scanner input = new Scanner(System.in);
-
              LocalDate today = LocalDate.now();
              boolean isRunning = true;
              int userday;
              int usermonth;
              int useryear;
              int currentyear = today.getYear();
-
+             int choice ;
 
            System.out.println("Enter your Birth Year");
            useryear = input.nextInt();
@@ -30,28 +29,35 @@ import java.time.LocalDate;
            while (isRunning) {
 
 
-                 if ( useryear < currentyear )
-                 System.out.println("Your input is Valid");
-                 else
-                 System.out.println("Enter a Valid Year");
+               if (useryear < currentyear)
+                   System.out.println("Your input is Valid");
+               else
+                   System.out.println("Enter a Valid Year");
+
+               if (usermonth >= 1 && usermonth <= 12)
+                   System.out.println("Your input is Valid");
+               else
+                   System.out.println("Enter a Valid Month a month can not be bigger than 12 and smaller than 1");
+
+               if (userday >= 1 && userday <= 31)
+                   System.out.println("Your input is Valid ");
+               else
+                   System.out.println("Enter a Valid Day a day can not be bigger than 31 and smaller than 1");
+
+               if (userday >= 1 && userday <= 31 && usermonth >= 1 && usermonth <= 12 && useryear < currentyear)
+                   System.out.println("All inputs are correct");
+               else
+                   System.out.println("Enter your Birth Year" + "\n" + "Enter your Birth Month" + "\n" + "Enter your Birth Day");
+
+               if (input.equals(1))
+                   Zodiac_Sign();
+               else if (input.equals(2))
+                    Main.anamenü();
+
+           }
 
 
-                 if (usermonth >= 1 && usermonth <= 12)
-                 System.out.println("Your input is Valid");
-                 else
-                 System.out.println("Enter a Valid Month a month can not be bigger than 12 and smaller than 1");
 
-                 if (userday >= 1 && userday <= 31)
-                 System.out.println("Your input is Valid ");
-                 else
-                 System.out.println("Enter a Valid Day a day can not be bigger than 31 and smaller than 1");
-
-                 if (userday >= 1 && userday <= 31 && usermonth >= 1 && usermonth <= 12 && useryear < currentyear )
-                     System.out.println("All inputs are correct");
-                  else
-                     System.out.println("Enter your Birth Year"+"\n"+"Enter your Birth Month"+"\n"+"Enter your Birth Day");
-break;
-             }
 
            if ( (usermonth == 1) && (userday>=1 || userday<=18 ) )
        System.out.println("Sagitarus");
@@ -118,10 +124,18 @@ break;
                System.out.println("Ophiuchus");
 
        int userage = currentyear-useryear;
-       System.out.println(userage);
+       System.out.println("Your age is " +userage);
+
+       System.out.println("İf you Want to calculate your zodiac and age again press 1");
+
+       System.out.println("İf you Want to exit and return to the main menu press 2");
+
+
 
    }
-     }
+
+   }
+
 
 
 
