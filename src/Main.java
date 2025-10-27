@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
     public static void guzelYazi(String text, int delay) {
         for (int i = 0; i < text.length(); i++) {
             System.out.print(text.charAt(i));
@@ -33,55 +32,60 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         String input = "";
         String subinput = "";
         boolean isRunning = true;
 
-
+        // Renkli açılış
         System.out.println("\u001B[35m JAVA");
         System.out.println("\u001B[34m IS");
         System.out.println("\u001B[36m SMART");
         System.out.println(
-                "\u001B[31m PROGRAM MADE BY GROUP 14 \n ALIDAMAT SAFARLI \n MAHMUT EGE SORHAN \n MUSTAFA CAN SANDALCI \n SERHAT DEMIR "
+                "\u001B[31m PROGRAM MADE BY GROUP 14 \n" +
+                        " ALIDAMAT SAFARLI \n" +
+                        " MAHMUT EGE SORHAN \n" +
+                        " MUSTAFA CAN SANDALCI \n" +
+                        " SERHAT DEMIR \u001B[0m"
         );
 
-
+        // Açılış geri sayımı
         for (int i = 5; i > 0; i--) {
             System.out.println("Please wait for program to open... " + i + " seconds");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.currentThread().interrupt();
             }
         }
 
+        // ASCII art (istersen kısaltabilirsin)
         clearScreen();
-
-
-        guzelYazi("$$\\      $$\\           $$\\                                              \n" +
-                "$$ | $$\\ $$ |          $$ |                                             \n" +
-                "$$ |$$$\\ $$ | $$$$$$\\  $$ | $$$$$$$\\  $$$$$$\\  $$$$$$\\$$$$\\   $$$$$$\\  \n" +
-                "$$ $$ $$\\$$ |$$  __$$\\ $$ |$$  _____|$$  __$$\\ $$  _$$  _$$\\ $$  __$$\\ \n" +
-                "$$$$  _$$$$ |$$$$$$$$ |$$ |$$ /      $$ /  $$ |$$ / $$ / $$ |$$$$$$$$ |\n" +
-                "$$$  / \\$$$ |$$   ____|$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$   ____|\n" +
-                "$$  /   \\$$ |\\$$$$$$$\\ $$ |\\$$$$$$$\\ \\$$$$$$  |$$ | $$ | $$ |\\$$$$$$$\\\n" +
-                "\\__/     \\__| \\_______|\\__| \\_______| \\______/ \\__| \\__| \\__| \\_______|\n", 3);
-
+        guzelYazi(
+                "$$\\      $$\\           $$\\                                              \n" +
+                        "$$ | $$\\ $$ |          $$ |                                             \n" +
+                        "$$ |$$$\\ $$ | $$$$$$\\  $$ | $$$$$$$\\  $$$$$$\\  $$$$$$\\$$$$\\   $$$$$$\\  \n" +
+                        "$$ $$ $$\\$$ |$$  __$$\\ $$ |$$  _____|$$  __$$\\ $$  _$$  _$$\\ $$  __$$\\ \n" +
+                        "$$$$  _$$$$ |$$$$$$$$ |$$ |$$ /      $$ /  $$ |$$ / $$ / $$ |$$$$$$$$ |\n" +
+                        "$$$  / \\$$$ |$$   ____|$$ |$$ |      $$ |  $$ |$$ | $$ | $$ |$$   ____|\n" +
+                        "$$  /   \\$$ |\\$$$$$$$\\ $$ |\\$$$$$$$\\ \\$$$$$$  |$$ | $$ | $$ |\\$$$$$$$\\\n" +
+                        "\\__/     \\__| \\_______|\\__| \\_______| \\______/ \\__| \\__| \\__| \\_______|\n", 3
+        );
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
 
+        // Ana menü
         clearScreen();
         anamenü();
 
         while (isRunning) {
+            // Tüm menü girişleri nextLine + trim + toUpperCase ile okunur
             input = scanner.nextLine().trim().toUpperCase();
 
             switch (input) {
-                case "A":
+                case "A": {
                     clearScreen();
                     guzelYazi("=== PRIMARY SCHOOL ===", 30);
                     System.out.println("\nSub-option 1 - Age and Zodiac Sign Detection");
@@ -90,33 +94,49 @@ public class Main {
 
                     subinput = scanner.nextLine().trim().toUpperCase();
                     switch (subinput) {
-                        case "1":
+                        case "1": {
                             clearScreen();
                             guzelYazi("=== Age and Zodiac Sign Detection ===", 20);
                             System.out.println();
+
+                            // Zodiac modülü (Zodiac_Sign.java içindeki sınıf)
                             Zodiac zodiac = new Zodiac(scanner);
                             zodiac.Zodiac_Sign();
+
                             clearScreen();
                             anamenü();
                             break;
-                        case "2":
+                        }
+                        case "2": {
                             clearScreen();
                             guzelYazi("=== Reverse the Words ===", 20);
 
+                            // ReverseRecursive menülü mini-uygulama (main içermez)
+                            // Not: ReverseRecursive.java dosyasında public class ReverseRecursive ve public static void run(Scanner) olmalı
+                            ReverseRecursive.run(scanner);
+
                             clearScreen();
                             anamenü();
                             break;
-                        case "X":
+                        }
+                        case "X": {
                             clearScreen();
                             anamenü();
                             break;
-                        default:
+                        }
+                        default: {
                             System.out.println("Please enter a valid sub-option (1, 2, or X)");
+                            // Kullanıcının görmesi için kısa bekleme
+                            try { Thread.sleep(1200); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+                            clearScreen();
+                            anamenü();
                             break;
+                        }
                     }
                     break;
+                }
 
-                case "B":
+                case "B": {
                     clearScreen();
                     guzelYazi("=== SECONDARY SCHOOL ===", 30);
                     System.out.println("\nSub-option 1 - Prime Numbers");
@@ -125,41 +145,41 @@ public class Main {
 
                     subinput = scanner.nextLine().trim().toUpperCase();
                     switch (subinput) {
-                        case "1":
+                        case "1": {
                             clearScreen();
                             guzelYazi("=== Prime Numbers ===", 20);
                             System.out.println("\nNot implemented yet");
-                            try {
-                                Thread.sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            try { Thread.sleep(2000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
                             clearScreen();
                             anamenü();
                             break;
-                        case "2":
+                        }
+                        case "2": {
                             clearScreen();
                             guzelYazi("=== Step-by-step Evaluation ===", 20);
                             System.out.println("\nNot implemented yet");
-                            try {
-                                Thread.sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            try { Thread.sleep(2000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
                             clearScreen();
                             anamenü();
                             break;
-                        case "X":
+                        }
+                        case "X": {
                             clearScreen();
                             anamenü();
                             break;
-                        default:
+                        }
+                        default: {
                             System.out.println("Please enter a valid sub-option (1, 2, or X)");
+                            try { Thread.sleep(1200); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+                            clearScreen();
+                            anamenü();
                             break;
+                        }
                     }
                     break;
+                }
 
-                case "C":
+                case "C": {
                     clearScreen();
                     guzelYazi("=== HIGH SCHOOL ===", 30);
                     System.out.println("\nSub-option 1 - Statistical Information about an Array");
@@ -168,41 +188,41 @@ public class Main {
 
                     subinput = scanner.nextLine().trim().toUpperCase();
                     switch (subinput) {
-                        case "1":
+                        case "1": {
                             clearScreen();
                             guzelYazi("=== Statistical Information ===", 20);
                             System.out.println("\nNot implemented yet");
-                            try {
-                                Thread.sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            try { Thread.sleep(2000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
                             clearScreen();
                             anamenü();
                             break;
-                        case "2":
+                        }
+                        case "2": {
                             clearScreen();
                             guzelYazi("=== Distance between Arrays ===", 20);
                             System.out.println("\nNot implemented yet");
-                            try {
-                                Thread.sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            try { Thread.sleep(2000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
                             clearScreen();
                             anamenü();
                             break;
-                        case "X":
+                        }
+                        case "X": {
                             clearScreen();
                             anamenü();
                             break;
-                        default:
+                        }
+                        default: {
                             System.out.println("Please enter a valid sub-option (1, 2, or X)");
+                            try { Thread.sleep(1200); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+                            clearScreen();
+                            anamenü();
                             break;
+                        }
                     }
                     break;
+                }
 
-                case "D":
+                case "D": {
                     clearScreen();
                     guzelYazi("=== UNIVERSITY ===", 30);
                     System.out.println("\nSub-option 1 - Connect Four Game");
@@ -210,41 +230,52 @@ public class Main {
 
                     subinput = scanner.nextLine().trim().toUpperCase();
                     switch (subinput) {
-                        case "1":
+                        case "1": {
                             clearScreen();
                             guzelYazi("=== Connect Four Game ===", 20);
                             System.out.println("\nNot implemented yet");
-                            try {
-                                Thread.sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            try { Thread.sleep(2000); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
                             clearScreen();
                             anamenü();
                             break;
-                        case "X":
+                        }
+                        case "X": {
                             clearScreen();
                             anamenü();
                             break;
-                        default:
+                        }
+                        default: {
                             System.out.println("Please enter a valid sub-option (1 or X)");
+                            try { Thread.sleep(1200); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+                            clearScreen();
+                            anamenü();
                             break;
+                        }
                     }
                     break;
+                }
 
-                case "E":
+                case "E": {
                     clearScreen();
                     guzelYazi("\n=== Thank you for using our program! ===\n", 30);
                     guzelYazi("Goodbye! 👋\n", 50);
                     isRunning = false;
                     break;
+                }
 
-                default:
+                default: {
                     System.out.println("Invalid option! Please enter A, B, C, D, or E");
+                    // Kullanıcı yanlış giriş yaptığında menüyü tekrar göster
+                    try { Thread.sleep(1200); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+                    clearScreen();
+                    anamenü();
                     break;
+                }
             }
         }
 
+        // Not: System.in başka yerde kullanılmayacaksa kapatılabilir.
+        // Bu projede tek yer burası olduğu için kapatıyoruz.
         scanner.close();
     }
 }
