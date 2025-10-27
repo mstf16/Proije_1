@@ -102,8 +102,7 @@ public class Main {
                         case "2":
                             clearScreen();
                             guzelYazi("=== Reverse the Words ===", 20);
-                            Reverse reverse = new Reverse();
-                            reverse.Reverse_S();
+
                             clearScreen();
                             anamenü();
                             break;
