@@ -94,7 +94,7 @@ public class Main {
                             clearScreen();
                             guzelYazi("=== Age and Zodiac Sign Detection ===", 20);
                             System.out.println();
-                            Zodiac zodiac = new Zodiac();
+                            Zodiac zodiac = new Zodiac(scanner);
                             zodiac.Zodiac_Sign();
                             clearScreen();
                             anamenü();
@@ -102,12 +102,8 @@ public class Main {
                         case "2":
                             clearScreen();
                             guzelYazi("=== Reverse the Words ===", 20);
-                            System.out.println("\nNot implemented yet");
-                            try {
-                                Thread.sleep(2000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            Reverse reverse = new Reverse();
+                            reverse.Reverse_S();
                             clearScreen();
                             anamenü();
                             break;

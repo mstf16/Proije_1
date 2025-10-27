@@ -11,8 +11,9 @@ class Zodiac {
     private int useryear;
     private int currentyear = today.getYear();
 
-    public Zodiac() {
-        this.input = new Scanner(System.in);
+
+    public Zodiac(Scanner scanner) {
+        this.input = scanner;
     }
 
     private void getInput() {
@@ -24,8 +25,8 @@ class Zodiac {
             System.out.print("Enter your Birth Day (1-31): ");
             userday = input.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println("Invalid input! Please enter numbers only.");
-            input.nextLine();
+            System.out.println("\n❌ Invalid input! Please enter numbers only.\n");
+            input.nextLine(); // Buffer temizle
             useryear = 0;
             usermonth = 0;
             userday = 0;
@@ -77,8 +78,9 @@ class Zodiac {
             try {
                 choice = input.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Invalid input!");
-                input.nextLine(); // Clear buffer
+                System.out.println("Invalid input! Returning to main menu...");
+                input.nextLine();
+                isRunning = false;
                 continue;
             }
 
@@ -124,7 +126,3 @@ class Zodiac {
         return "Unknown";
     }
 }
-
-
-
-
