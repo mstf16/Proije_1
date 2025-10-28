@@ -58,7 +58,7 @@ public class Main {
             }
         }
 
-        // ASCII art (istersen kısaltabilirsin)
+
         clearScreen();
         guzelYazi(
                 "$$\\      $$\\           $$\\                                              \n" +

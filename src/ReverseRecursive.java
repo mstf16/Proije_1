@@ -12,7 +12,7 @@ public class ReverseRecursive {
             System.out.println("1) Enter text and reverse only letters");
             System.out.println("2) Run quick samples");
             System.out.println("3) Manual test mode");
-            System.out.println("0) Exit");
+            System.out.println("X) Exit");
             System.out.print("\nChoice: ");
 
             String choice = scanner.nextLine().trim();
@@ -37,7 +37,7 @@ public class ReverseRecursive {
                     title("Manual Test Mode");
                     manualTest(scanner);
                 }
-                case "0" -> running = false;
+                case "X" -> running = false;
                 default -> {
                     System.out.println("\nInvalid choice");
                     pause(scanner);
